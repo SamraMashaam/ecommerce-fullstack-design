@@ -1,15 +1,13 @@
-// src/components/Header.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
     <header className="w-full shadow-md bg-white">
-      {/* Top section: Logo + Search + Icons */}
       <div className="flex items-center justify-between px-6 py-3 gap-4 flex-wrap">
-        {/* Logo */}
         <div className="text-2xl font-bold text-blue-600">Brand</div>
 
-        {/* Search Bar */}
+        {/* Search */}
         <div className="flex flex-1 max-w-2xl mx-4">
           <input
             type="text"
@@ -21,22 +19,17 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Icons */}
         <div className="flex gap-4 text-gray-600 text-lg">
-          <button className="hover:text-blue-600">Login</button>
-          <button className="hover:text-blue-600">Cart 🛒</button>
+          <Link to="/login" className="hover:text-blue-600">Login</Link>
+          <Link to="/cart" className="hover:text-blue-600">Cart 🛒</Link>
         </div>
       </div>
 
-      {/* Bottom Navigation Menu */}
-      <nav className="bg-white-600 text-sm px-6 py-2 shadow">
+      {/* Navigation Links */}
+      <nav className="bg-white text-sm px-6 py-2 shadow">
         <ul className="flex space-x-6 overflow-x-auto">
-          <li className="hover:underline cursor-pointer text-black">Home</li>
-          <li className="hover:underline cursor-pointer text-black">All Categories</li>
-          <li className="hover:underline cursor-pointer text-black">Top Deals</li>
-          <li className="hover:underline cursor-pointer text-black">Best Sellers</li>
-          <li className="hover:underline cursor-pointer text-black">New Arrivals</li>
-          <li className="hover:underline cursor-pointer text-black">Contact Us</li>
+          <li><Link to="/" className="hover:underline text-black">Home</Link></li>
+          <li><Link to="/products" className="hover:underline text-black">View Products</Link></li>
         </ul>
       </nav>
     </header>
